@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mi_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mi_contraseña_segura
+      MYSQL_DATABASE: bd_natalia_romerin_cortissoz
+      MYSQL_USER: mi_usuario
+      MYSQL_PASSWORD: mi_usuario_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - datos_mysql:/var/lib/mysql
+
+volumes:
+  datos_mysql:
